@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Revents - A social media app to schedule events
+
+WIP - Started Sep 2022
+
+This front end was iniitally built following a [tutorial](https://www.udemy.com/course/build-an-app-with-react-redux-and-firestore-from-scratch/learn/lecture/21301664#questions) by [Neil Cummings](https://trycatchlearn.com). 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
