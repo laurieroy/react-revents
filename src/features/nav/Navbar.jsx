@@ -15,7 +15,7 @@ export default function Navbar({ setFormOpen }) {
             positive
             inverted
             content="Create Event"
-          ></Button>
+          />
         </MenuItem>
         <MenuItem position="right">
           <Button basic inverted content="Login" />

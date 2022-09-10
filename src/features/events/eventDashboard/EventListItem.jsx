@@ -20,9 +20,10 @@ export default function EventListItem({ event }) {
         <ItemGroup>
           <Item>
             <ItemImage size="tiny" circular src={event.hostPhotoURL} />
-            <ItemContent />
-            <ItemHeader content={event.title} />
-            <ItemDescription>Hosed by {event.hostedBy}</ItemDescription>
+            <ItemContent>
+              <ItemHeader content={event.title} />
+              <ItemDescription>Hosed by {event.hostedBy}</ItemDescription>
+            </ItemContent>
           </Item>
         </ItemGroup>
       </Segment>
