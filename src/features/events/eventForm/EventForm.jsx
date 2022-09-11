@@ -1,8 +1,9 @@
 import { useState } from "react";
 
+import cuid from "cuid";
 import { Button, Form, FormField, Header, Segment } from "semantic-ui-react";
 
-export default function EventForm({ setFormOpen, setEvents, createEvent}) {
+export default function EventForm({ setFormOpen, setEvents, createEvent }) {
   const initialValues = {
     title: "",
     category: "",
@@ -15,12 +16,19 @@ export default function EventForm({ setFormOpen, setEvents, createEvent}) {
   const [values, setValues] = useState(initialValues);
 
   function handleFormSubmit() {
-    createEvent(values);
+    createEvent({
+      ...values,
+      id: cuid(),
+      hostedBy: "Bob",
+      attendees: [],
+      hostPhotoURL: "/assets/user.png",
+    });
+    setFormOpen(false);
   }
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    setValues({ ...initialValues, [name]: value });
+    setValues({ ...values, [name]: value });
   }
 
   return (
@@ -38,35 +46,35 @@ export default function EventForm({ setFormOpen, setEvents, createEvent}) {
           <input
             type="text"
             placeholder="Category"
-            name="title"
+            name="category"
             value={values.category}
             onChange={(e) => handleInputChange(e)}
           />
           <input
             type="text"
             placeholder="Description"
-            name="title"
+            name="description"
             value={values.description}
             onChange={(e) => handleInputChange(e)}
           />
           <input
             type="text"
             placeholder="City"
-            name="title"
+            name="city"
             value={values.city}
             onChange={(e) => handleInputChange(e)}
           />
           <input
             type="text"
             placeholder="Venue"
-            name="title"
+            name="venue"
             value={values.venue}
             onChange={(e) => handleInputChange(e)}
           />
           <input
             type="text"
             placeholder="Date"
-            name="title"
+            name="date"
             value={values.date}
             onChange={(e) => handleInputChange(e)}
           />
