@@ -2,11 +2,6 @@ import {
   Button,
   Icon,
   Item,
-  ItemContent,
-  ItemDescription,
-  ItemGroup,
-  ItemHeader,
-  ItemImage,
   List,
   Segment,
   SegmentGroup,
@@ -17,15 +12,15 @@ export default function EventListItem({ event }) {
   return (
     <SegmentGroup>
       <Segment>
-        <ItemGroup>
+        <Item.Group>
           <Item>
-            <ItemImage size="tiny" circular src={event.hostPhotoURL} />
-            <ItemContent>
-              <ItemHeader content={event.title} />
-              <ItemDescription>Hosed by {event.hostedBy}</ItemDescription>
-            </ItemContent>
+            <Item.Image size="tiny" circular src={event.hostPhotoURL} />
+            <Item.Content>
+              <Item.Header content={event.title} />
+              <Item.Description>Hosted by {event.hostedBy}</Item.Description>
+            </Item.Content>
           </Item>
-        </ItemGroup>
+        </Item.Group>
       </Segment>
       <Segment>
         <span>
