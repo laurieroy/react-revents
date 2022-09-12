@@ -17,6 +17,11 @@ export default function EventDashboard({
     setEvents([...events, event]);
   }
 
+  function handleUpdateEvent(updatedEvent) {
+    setEvents(events.map( evt => evt.id === updatedEvent.id ? updatedEvent : evt));
+    selectEvent(null);
+  }
+
   return (
     <Grid>
       <Grid.Column width={10}>
@@ -30,6 +35,7 @@ export default function EventDashboard({
             createEvent={handleCreateEvent}
             selectedEvent={selectedEvent}
             key={selectedEvent ? selectedEvent.id : null}
+            updateEvent={handleUpdateEvent}
           />
         )}
       </Grid.Column>
