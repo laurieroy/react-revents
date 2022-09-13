@@ -6,8 +6,11 @@ import EventDetails from "../../features/events/eventDetails/EventDetailsPage";
 import HomePage from "../../features/home/HomePage";
 import EventForm from "../../features/events/eventForm/EventForm";
 import Sandbox from "../../features/sandbox/Sandbox";
+import { useLocation } from "react-router-dom";
 
 export default function App() {
+  const { key } = useLocation();
+
   return (
     <>
       <Route exact path="/" component={HomePage} />
@@ -23,6 +26,7 @@ export default function App() {
               <Route
                 path={["/createEvent", "/manage/:id"]}
                 component={EventForm}
+                key={key}
               />
             </Container>
           </>
