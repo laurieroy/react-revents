@@ -22,6 +22,7 @@ export default function Navbar({ setFormOpen }) {
           Re-vents
         </MenuItem>
         <MenuItem as={NavLink} to="/events" name="Events" />
+        <MenuItem as={NavLink} to="/sandbox" name="Sandbox" />
         {authenticated && (
           <MenuItem as={NavLink} to="/createEvent">
             <Button
